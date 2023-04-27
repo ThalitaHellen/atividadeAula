@@ -1,0 +1,28 @@
+body{
+    font-family: 'Dosis', sans-serif;
+}
+#form-login{
+    text-align: center;
+    margin-top: 5%;
+    font-family: Dosis;
+}
+input[type="submit"]{
+    width: 180px;
+    padding: 5px 0px 5px 0px;
+    font-size:16pt;
+    font-family: Dosis;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: cadetblue;   
+}
+.fields{
+    width: 200px;
+    font-family: Dosis;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16pt;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px black;
+    
+}
