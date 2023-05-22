@@ -17,8 +17,8 @@ public class FuncionarioDAO {
     //INSERT (Create)
     public void insertFuncionario(Funcionario f) throws SQLException{
         //Criando a query para inserir o registro
-        String query = "INSERT INTO funcionario(id, nome, cargo_id, salario)"
-                + "VALUES(?,?,?,?)";
+        String query = "INSERT INTO funcionario(id, nome, cargo_id, salario, data_nascimento)"
+                + "VALUES(?,?,?,?,?)";
         
         //Preparar a query para ser executada no BD
         PreparedStatement prep = conn.prepareStatement(query);
@@ -26,7 +26,8 @@ public class FuncionarioDAO {
        prep.setInt(1, f.getId());
        prep.setString(2, f.getNome());
        prep.setInt(3, f.getCargo_Id());
-       prep.setBigDecimal(4, f.getSalario()); 
+       prep.setBigDecimal(4, f.getSalario());
+       prep.setString(5, f.getdata_nascimento());
         
         //Executando a query pronta
         prep.execute();
@@ -60,6 +61,7 @@ public class FuncionarioDAO {
             func.setNome(res.getString("nome"));
             func.setCargo_Id(res.getInt("cargo_id"));
             func.setSalario(res.getBigDecimal("salario"));
+            func.setNome(res.getString("data_nascimento"));
             
             //Inserir o objeto completo na lista
             list.add(func);
@@ -85,6 +87,7 @@ public class FuncionarioDAO {
             func.setNome(res.getString("nome"));
             func.setCargo_Id(res.getInt("cargo_id"));
             func.setSalario(res.getBigDecimal("salario"));
+            func.setNome(res.getString("data_nascimento"));
         }
         
         return func;
@@ -94,13 +97,14 @@ public class FuncionarioDAO {
     //UPDATE
     public void updateFuncionario(Funcionario func) throws SQLException {
         String query = "UPDATE funcionario SET nome = ?,"
-                + "cargo_id = ?, salario = ?,";
+                + "cargo_id = ?, salario = ?, data_nascimento = ?";
         
         PreparedStatement prep = conn.prepareStatement(query);
-        prep.setInt(1, func.getId());
-       prep.setString(2, func.getNome());
-       prep.setInt(3, func.getCargo_Id());
-       prep.setBigDecimal(4, func.getSalario()); 
+            func.setId(res.getInt("id"));
+            func.setNome(res.getString("nome"));
+            func.setCargo_Id(res.getInt("cargo_id"));
+            func.setSalario(res.getBigDecimal("salario"));
+            func.setNome(res.getString("data_nascimento"));
         
         prep.execute();
         prep.close();
