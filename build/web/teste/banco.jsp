@@ -3,10 +3,10 @@
 <%
      try{ 
            MyDatabase.getDatabase();    
-           out.print("Conexão ok: ");
+           out.print("Conex?o ok: ");
            out.print(MyDatabase.getDatabase().getCatalog());
     } catch(SQLException | ClassNotFoundException e){
-            out.print("Falha na conexão:  " + e);
+            out.print("Falha na conex?o:  " + e);
     }
 
 %>
