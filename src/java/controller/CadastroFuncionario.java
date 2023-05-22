@@ -20,7 +20,7 @@ public class CadastroFuncionario extends HttpServlet {
     private String nome;
     private int cargo_id;
     private BigDecimal salario;
-    private Date data_nascimento;
+    private String data_nascimento;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
