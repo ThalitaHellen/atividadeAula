@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login extends HttpServlet {
 
@@ -19,11 +18,13 @@ public class Login extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         
-        if(user.equals("email@email.com")&&
-                pass.equals("senha1234")){
-            request.setAttribute("userLogged", "Thalita Schneider");
-            request.getRequestDispatcher("home.jsp").forward(request, response);
-        }else{
+        if(user.equals("email@email.com") &&
+                pass.equals("senha1234")) {
+            
+            request.setAttribute("userLogged", "Paulo Donini");
+            request.getRequestDispatcher("home.jsp")
+                    .forward(request, response);
+        } else {
             PrintWriter out = response.getWriter();
             out.print(
                     "<script>"
@@ -32,6 +33,8 @@ public class Login extends HttpServlet {
                     + "</script>"
             );
         }
+        
+        
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */

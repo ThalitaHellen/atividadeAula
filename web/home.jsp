@@ -6,6 +6,7 @@
 
 <%@page import="model.User" %>
 <%
+    User u = (User)request.getAttribute("userLogged");
     User uSession = (User)session.getAttribute("userLoggedSession");
 %>
 
@@ -17,16 +18,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="session/verify.jsp" %>
-        <p>
-            Bem vindo <%= (uSession != null)
-                            ? uSession.getUserName()
-                            : "visitante" %>
-            <button onclick="window.location.href='session/logout.jsp'">Logout</button>
-        </p>
-        <hr>
-        <button onclick="window.location.href='cadastro.jsp'">CADASTRAR</button>
-        <button onclick="window.location.href='lista.jsp'">LISTAR</button>
+        <h1>Bem vindo <%= u %></h1>
+        <h1>Bem vindo <%= uSession %></h1>
     </body>
 </html>
-
