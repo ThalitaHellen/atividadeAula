@@ -15,7 +15,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <%@include file="session/verify.jsp" %>
@@ -30,3 +29,4 @@
         <button onclick="window.location.href='lista.jsp'">LISTAR</button>
     </body>
 </html>
+

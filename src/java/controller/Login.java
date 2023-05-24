@@ -37,7 +37,7 @@ public class Login extends HttpServlet {
             out.print(
                     "<script>"
                     + "alert('Acesso negado!');"
-                    + "window.location.replace('index.jsp');"
+                    + "window.location.replace('index.html');"
                     + "</script>"
             );
         }

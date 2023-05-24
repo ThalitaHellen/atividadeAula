@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class MyDatabase {
             public static Connection getDatabase() throws ClassNotFoundException, SQLException{
                 String driver = "com.mysql.jdbc.Driver";
-                String url = "jdbc:mysql://localhost:3306/loja_hp";
+                String url = "jdbc:mysql://localhost:3307/cd_baby";
                 String user = "root";
                 String pass = "";
                 
